@@ -1,0 +1,39 @@
+.dicas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.dica-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.dica-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.dica-icon {
+  width: 2.2rem;
+  height: 2.2rem;
+  flex-shrink: 0;
+  color: var(--accent);
+}
+
+.dica-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.dica-texto {
+  font-size: 0.95rem;
+  color: var(--ink);
+}

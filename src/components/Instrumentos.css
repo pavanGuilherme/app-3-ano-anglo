@@ -1,0 +1,57 @@
+.instrumentos-grupos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.instrumento-grupo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  padding: 20px 14px;
+  border-radius: 16px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.instrumento-grupo:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.instrumento-grupo-icon {
+  width: 2.6rem;
+  height: 2.6rem;
+  color: var(--accent);
+}
+
+.instrumento-grupo-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.instrumento-grupo-titulo {
+  font-size: 1.05rem;
+}
+
+.instrumento-chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.instrumento-chip {
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 16%, var(--surface));
+  color: var(--ink);
+  border: 1px solid var(--accent);
+}
