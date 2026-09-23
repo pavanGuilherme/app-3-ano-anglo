@@ -1,0 +1,254 @@
+.tambor-botao,
+.corda-caixa,
+.sino-botao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.tambor {
+  width: 120px;
+  height: 120px;
+  overflow: visible;
+}
+
+.tambor-pele {
+  fill: var(--surface);
+  stroke: var(--ink);
+  stroke-width: 4;
+}
+
+.tambor-lateral {
+  fill: var(--accent, var(--vermelho));
+  stroke: var(--ink);
+  stroke-width: 4;
+}
+
+.tambor-base {
+  fill: color-mix(in srgb, var(--accent, var(--vermelho)) 65%, var(--ink));
+  stroke: var(--ink);
+  stroke-width: 3;
+}
+
+.tambor-linha {
+  stroke: var(--ink);
+  stroke-width: 2;
+  opacity: 0.3;
+}
+
+.tambor.batendo .tambor-corpo {
+  transform-box: fill-box;
+  transform-origin: 50% 40%;
+  animation: tambor-tremer 0.45s ease;
+}
+
+@keyframes tambor-tremer {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  20% {
+    transform: translateY(4px) rotate(-3deg);
+  }
+  40% {
+    transform: translateY(-2px) rotate(3deg);
+  }
+  60% {
+    transform: translateY(2px) rotate(-2deg);
+  }
+  80% {
+    transform: translateY(-1px) rotate(1deg);
+  }
+}
+
+.tambor-anel {
+  fill: none;
+  stroke: var(--accent, var(--vermelho));
+  stroke-width: 3;
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+}
+
+.tambor.batendo .tambor-anel {
+  animation: anel-expandir 0.7s ease-out;
+}
+
+.tambor.batendo .tambor-anel-2 {
+  animation-delay: 0.12s;
+}
+
+.tambor.batendo .tambor-anel-3 {
+  animation-delay: 0.24s;
+}
+
+@keyframes anel-expandir {
+  0% {
+    opacity: 0.8;
+    transform: scale(0.6);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2.1);
+  }
+}
+
+.tambor-legenda,
+.corda-legenda,
+.sino-legenda {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+.corda {
+  width: 150px;
+  height: 94px;
+}
+
+.corda-corpo {
+  fill: var(--well);
+  stroke: var(--accent, var(--roxo));
+  stroke-width: 4;
+}
+
+.corda-rebite {
+  fill: var(--ink);
+}
+
+.corda-base {
+  stroke: var(--ink);
+  stroke-width: 3;
+  opacity: 0.35;
+}
+
+.corda-onda {
+  fill: none;
+  stroke: var(--accent, var(--roxo));
+  stroke-width: 4;
+  stroke-linecap: round;
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+}
+
+.corda-caixa:hover .corda-onda,
+.corda.dedilhando .corda-onda {
+  opacity: 1;
+  animation: corda-vibrar 0.09s steps(1) infinite alternate;
+}
+
+@keyframes corda-vibrar {
+  from {
+    transform: scaleY(1);
+  }
+  to {
+    transform: scaleY(-1);
+  }
+}
+
+.sino {
+  width: 110px;
+  height: 110px;
+  overflow: visible;
+}
+
+.sino-corpo-forma {
+  fill: var(--accent, var(--amarelo));
+  stroke: var(--ink);
+  stroke-width: 4;
+}
+
+.sino-alca {
+  fill: var(--ink);
+}
+
+.sino-borda {
+  fill: color-mix(in srgb, var(--accent, var(--amarelo)) 65%, var(--ink));
+  stroke: var(--ink);
+  stroke-width: 3;
+}
+
+.sino-fio {
+  stroke: var(--ink);
+  stroke-width: 3;
+}
+
+.sino-badalo {
+  fill: var(--ink);
+}
+
+.sino.tocando .sino-corpo {
+  transform-box: fill-box;
+  transform-origin: 50% 4%;
+  animation: sino-balancar 0.6s ease;
+}
+
+@keyframes sino-balancar {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  15% {
+    transform: rotate(-14deg);
+  }
+  35% {
+    transform: rotate(12deg);
+  }
+  55% {
+    transform: rotate(-8deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+  90% {
+    transform: rotate(-2deg);
+  }
+}
+
+.sino-brilho {
+  font-size: 14px;
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+}
+
+.sino.tocando .sino-brilho {
+  animation: brilho-estourar 0.7s ease-out;
+}
+
+.sino.tocando .sino-brilho-2 {
+  animation-delay: 0.08s;
+}
+
+.sino.tocando .sino-brilho-3 {
+  animation-delay: 0.16s;
+}
+
+@keyframes brilho-estourar {
+  0% {
+    opacity: 0;
+    transform: scale(0.4) translateY(0);
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.3) translateY(-14px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .corda-caixa:hover .corda-onda,
+  .corda.dedilhando .corda-onda {
+    opacity: 1;
+    animation: none;
+    transform: none;
+  }
+}

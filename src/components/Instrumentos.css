@@ -1,41 +1,42 @@
 .instrumentos-grupos {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 16px;
-  margin-top: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 22px;
+  margin-top: 22px;
 }
 
 .instrumento-grupo {
+  --tilt: -1.5deg;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   gap: 8px;
-  padding: 20px 14px;
-  border-radius: 16px;
-  background: var(--bg);
-  border: 1px solid var(--border);
-  transition: border-color 0.25s ease, transform 0.25s ease;
+  padding: 22px 16px;
+  border-radius: 20px;
+  background: var(--well);
+  border: 3px solid var(--accent);
+  box-shadow: 4px 4px 0 var(--ink);
+  transform: rotate(var(--tilt));
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.instrumento-grupo:nth-child(even) {
+  --tilt: 1.5deg;
 }
 
 .instrumento-grupo:hover {
-  border-color: var(--accent);
-  transform: translateY(-2px);
+  box-shadow: 6px 6px 0 var(--ink);
+  transform: translateY(-3px) rotate(0deg);
 }
 
 .instrumento-grupo-icon {
-  width: 2.6rem;
-  height: 2.6rem;
-  color: var(--accent);
-}
-
-.instrumento-grupo-icon svg {
-  width: 100%;
-  height: 100%;
+  font-size: 2.6rem;
+  line-height: 1;
 }
 
 .instrumento-grupo-titulo {
-  font-size: 1.05rem;
+  font-size: 1.2rem;
 }
 
 .instrumento-chips {
@@ -47,11 +48,11 @@
 }
 
 .instrumento-chip {
-  font-size: 0.85rem;
-  font-weight: 600;
-  padding: 6px 12px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 6px 14px;
   border-radius: 999px;
-  background: color-mix(in srgb, var(--accent) 16%, var(--surface));
+  background: var(--surface);
   color: var(--ink);
-  border: 1px solid var(--accent);
+  border: 2px solid var(--accent);
 }

@@ -1,5 +1,4 @@
-export const propagacaoTexto =
-  "As vibrações fazem as partículas do meio ao redor também vibrarem."
+export const propagacaoTexto = "O som viaja fazendo as partículas ao redor vibrarem!"
 
 export const propagacaoMeios = [
   { id: "ar", label: "Ar", icon: "vento", texto: "O som se propaga por aqui!" },

@@ -1,7 +1,8 @@
 import Icon from "./icons/Icon.jsx"
+import Mascote from "./Mascote.jsx"
 import useReveal from "../hooks/useReveal.js"
 
-export default function Section({ id, title, icon, accent, ariaLabel, emoji, children }) {
+export default function Section({ id, title, icon, accent, ariaLabel, emoji, dica, children }) {
   const [ref, visible] = useReveal()
 
   return (
@@ -13,7 +14,6 @@ export default function Section({ id, title, icon, accent, ariaLabel, emoji, chi
       style={{ "--accent": `var(--${accent})` }}
     >
       <span className="section-index" aria-hidden="true" />
-      <div className="section-bar" aria-hidden="true" />
       <div className="section-inner">
         <h2 className="section-title">
           {icon && (
@@ -28,6 +28,14 @@ export default function Section({ id, title, icon, accent, ariaLabel, emoji, chi
             </span>
           )}
         </h2>
+        {dica && (
+          <div className="section-mascote">
+            <Mascote size={64} />
+            <div className="balao-fala">
+              <p>{dica}</p>
+            </div>
+          </div>
+        )}
         {children}
       </div>
     </section>

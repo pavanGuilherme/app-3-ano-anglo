@@ -1,52 +1,53 @@
 .explorador {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 14px;
-  margin-top: 20px;
+  gap: 16px;
+  margin-top: 22px;
 }
 
 .explorador-grupo {
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 10px 12px 12px;
+  border: 3px solid var(--border);
+  border-radius: 18px;
+  padding: 12px 14px 14px;
   margin: 0;
+  background: var(--well);
 }
 
 .explorador-legenda {
   font-family: var(--font-title);
-  font-weight: 600;
-  font-size: 0.85rem;
-  color: var(--ink-soft);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--ink);
   padding: 0 4px;
 }
 
 .explorador-botoes {
   display: flex;
   gap: 8px;
-  margin-top: 6px;
+  margin-top: 8px;
 }
 
 .explorador-botao {
   flex: 1;
-  border: 2px solid var(--border);
+  min-height: 46px;
+  border: 3px solid var(--accent);
   background: var(--surface);
   color: var(--ink);
   border-radius: 999px;
-  padding: 8px 10px;
-  font-weight: 600;
-  font-size: 0.85rem;
-  transition: background-color 0.2s, border-color 0.2s, color 0.2s, transform 0.15s;
+  padding: 12px 10px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: background-color 0.2s, transform 0.15s, box-shadow 0.15s;
 }
 
 .explorador-botao:hover {
-  border-color: var(--accent);
+  transform: translateY(-2px);
 }
 
 .explorador-botao.ativo {
   background: var(--accent);
-  border-color: var(--accent);
-  color: var(--bg);
-  box-shadow: 0 0 18px -4px var(--accent);
+  color: var(--ink);
+  box-shadow: 3px 3px 0 var(--ink);
   transform: translateY(-1px);
 }
 
@@ -55,22 +56,19 @@
   display: flex;
   align-items: center;
   gap: 16px;
-  background: var(--well);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 16px;
+  background: var(--surface);
+  border: 3px solid var(--accent);
+  border-radius: 20px;
+  padding: 18px;
 }
 
 .onda-icon-origem {
-  width: 2.4rem;
-  height: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.4rem;
+  line-height: 1;
   flex-shrink: 0;
-  color: var(--gold);
-}
-
-.onda-icon-origem svg {
-  width: 100%;
-  height: 100%;
 }
 
 .onda-svg {
@@ -81,24 +79,24 @@
 }
 
 .onda-linha-base {
-  stroke: rgba(255, 255, 255, 0.15);
-  stroke-width: 1;
+  stroke: rgba(46, 42, 77, 0.2);
+  stroke-width: 2;
 }
 
 .onda-path {
   fill: none;
   stroke: var(--accent);
-  stroke-width: 3;
+  stroke-width: 4;
   stroke-linecap: round;
   stroke-linejoin: round;
-  filter: drop-shadow(0 0 6px var(--accent));
   transition: d 0.4s ease;
 }
 
 .onda-descricao {
   margin-top: 14px;
-  color: var(--ink-soft);
-  font-size: 0.92rem;
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 1rem;
 }
 
 @media (prefers-reduced-motion: reduce) {

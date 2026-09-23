@@ -1,0 +1,101 @@
+.medidor {
+  margin-top: 22px;
+  padding: 20px;
+  background: var(--well);
+  border: 3px solid var(--accent);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.medidor-escala {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.medidor-rotulo {
+  font-weight: 800;
+  font-size: 0.9rem;
+  color: var(--ink);
+}
+
+.medidor-tubo {
+  position: relative;
+  width: 34px;
+  height: 180px;
+  border-radius: 999px;
+  border: 3px solid var(--ink);
+  background: linear-gradient(0deg, var(--verde) 0%, var(--amarelo) 55%, var(--vermelho) 100%);
+}
+
+.medidor-marcador {
+  position: absolute;
+  left: 50%;
+  bottom: 4%;
+  width: 26px;
+  height: 26px;
+  margin-left: -13px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 3px solid var(--ink);
+}
+
+.medidor.ativo .medidor-marcador {
+  animation: medidor-subir 1.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes medidor-subir {
+  from {
+    bottom: 4%;
+  }
+  to {
+    bottom: 74%;
+  }
+}
+
+.medidor-marcador-brilho {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 3px solid var(--vermelho);
+  opacity: 0;
+}
+
+.medidor.ativo .medidor-marcador-brilho {
+  animation: medidor-pulsar 1.4s ease-out 1.8s infinite;
+}
+
+@keyframes medidor-pulsar {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.7);
+    opacity: 0;
+  }
+}
+
+.medidor-legenda {
+  text-align: center;
+  font-weight: 700;
+  color: var(--ink);
+  max-width: 40ch;
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .medidor.ativo .medidor-marcador {
+    animation: none;
+    bottom: 74%;
+  }
+
+  .medidor.ativo .medidor-marcador-brilho {
+    animation: none;
+    opacity: 0;
+  }
+}

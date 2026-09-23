@@ -1,4 +1,5 @@
 import Section from "./Section.jsx"
+import Revelar from "./Revelar.jsx"
 import Icon from "./icons/Icon.jsx"
 import { tecnologiasIntro, tecnologiasAuditivas } from "../data/tecnologias.js"
 import "./Tecnologias.css"
@@ -9,10 +10,11 @@ export default function Tecnologias() {
       id="tecnologias"
       title="Aparelhos Auditivos e Tecnologias"
       icon="aparelhoAuditivo"
-      accent="teal"
+      accent="vermelho"
+      dica="A tecnologia ajuda muita gente a ouvir melhor o mundo. Que legal!"
     >
       <p className="section-text">{tecnologiasIntro}</p>
-      <ul className="tecnologias-grid">
+      <Revelar as="ul" className="tecnologias-grid" animacao="crescer">
         {tecnologiasAuditivas.map((item) => (
           <li key={item.id} className="tecnologia-card">
             <span className="tecnologia-icon">
@@ -22,7 +24,7 @@ export default function Tecnologias() {
             <p className="tecnologia-texto">{item.texto}</p>
           </li>
         ))}
-      </ul>
+      </Revelar>
     </Section>
   )
 }

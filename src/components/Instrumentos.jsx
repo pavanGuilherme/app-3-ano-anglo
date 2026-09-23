@@ -1,12 +1,19 @@
 import Section from "./Section.jsx"
+import Revelar from "./Revelar.jsx"
 import Icon from "./icons/Icon.jsx"
 import { gruposInstrumentos } from "../data/instrumentos.js"
 import "./Instrumentos.css"
 
 export default function Instrumentos() {
   return (
-    <Section id="instrumentos" title="Instrumentos Musicais" icon="percussao" accent="gold">
-      <ul className="instrumentos-grupos">
+    <Section
+      id="instrumentos"
+      title="Instrumentos Musicais"
+      icon="percussao"
+      accent="roxo"
+      dica="Cordas, sopro ou percussão? Cada instrumento canta de um jeito!"
+    >
+      <Revelar as="ul" className="instrumentos-grupos" animacao="crescer">
         {gruposInstrumentos.map((grupo) => (
           <li key={grupo.id} className="instrumento-grupo">
             <span className="instrumento-grupo-icon">
@@ -22,7 +29,7 @@ export default function Instrumentos() {
             </ul>
           </li>
         ))}
-      </ul>
+      </Revelar>
     </Section>
   )
 }

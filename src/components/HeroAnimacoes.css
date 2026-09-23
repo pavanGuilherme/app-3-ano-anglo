@@ -1,0 +1,92 @@
+.notas-flutuantes {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.nota-flutuante {
+  position: absolute;
+  bottom: -10%;
+  font-weight: 700;
+  opacity: 0;
+  animation: nota-subir 7s ease-in infinite;
+}
+
+@keyframes nota-subir {
+  0% {
+    transform: translateY(0) rotate(-8deg);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.85;
+  }
+  85% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-320px) rotate(10deg);
+    opacity: 0;
+  }
+}
+
+.alto-falante {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  width: 56px;
+  height: 56px;
+  z-index: 1;
+}
+
+.alto-falante-cone,
+.alto-falante-caixa {
+  fill: var(--ink);
+}
+
+.onda-emitida {
+  fill: none;
+  stroke-width: 4;
+  stroke-linecap: round;
+  transform-box: fill-box;
+  transform-origin: 0% 50%;
+  animation: onda-pulsar 2.1s ease-in-out infinite;
+}
+
+.onda-emitida-1 {
+  stroke: var(--vermelho);
+  animation-delay: 0s;
+}
+
+.onda-emitida-2 {
+  stroke: var(--laranja);
+  animation-delay: 0.25s;
+}
+
+.onda-emitida-3 {
+  stroke: var(--amarelo);
+  animation-delay: 0.5s;
+}
+
+@keyframes onda-pulsar {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: scaleX(0.75);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleX(1.05);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nota-flutuante {
+    display: none;
+  }
+
+  .onda-emitida {
+    opacity: 0.7;
+    transform: none;
+  }
+}

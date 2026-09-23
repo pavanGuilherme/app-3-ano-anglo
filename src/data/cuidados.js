@@ -17,6 +17,6 @@ export const cuidadosOrelhas = [
   {
     id: "ajuda-adulto",
     icon: "ajudaAdulto",
-    texto: "Pedir ajuda a um adulto quando houver dor, zumbido ou dificuldade para ouvir.",
+    texto: "Pedir ajuda a um adulto se sentir dor ou zumbido.",
   },
 ]

@@ -10,6 +10,7 @@ import Tecnologias from "./components/Tecnologias.jsx"
 import InstrumentosCaseiros from "./components/InstrumentosCaseiros.jsx"
 import Footer from "./components/Footer.jsx"
 import BackToTop from "./components/BackToTop.jsx"
+import BotaoSom from "./components/BotaoSom.jsx"
 
 export default function App() {
   return (
@@ -30,6 +31,7 @@ export default function App() {
         <Footer />
       </div>
       <BackToTop />
+      <BotaoSom />
     </>
   )
 }

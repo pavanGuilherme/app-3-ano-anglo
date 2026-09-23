@@ -1,5 +1,4 @@
-export const comoSomNasceTexto =
-  "O som nasce quando um objeto vibra. Podemos perceber vibrações em situações simples: bater em um tambor, tocar uma corda ou falar."
+export const comoSomNasceTexto = "O som nasce quando um objeto vibra!"
 
 export const comoSomNasceExemplos = [
   { id: "tambor", label: "Bater em um tambor", icon: "tambor" },

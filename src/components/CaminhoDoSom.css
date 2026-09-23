@@ -1,9 +1,51 @@
 .caminho {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 28px;
-  margin-top: 20px;
+  margin-top: 22px;
   counter-reset: etapa;
+}
+
+.onda-viajante {
+  position: absolute;
+  left: 27px;
+  top: 0;
+  width: 16px;
+  height: 16px;
+  margin-left: -8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 30%, transparent);
+  opacity: 0;
+  z-index: 2;
+}
+
+.caminho-ativo .onda-viajante {
+  animation: onda-caminhar-vertical 3.6s ease-in-out infinite;
+}
+
+@keyframes onda-caminhar-vertical {
+  0% {
+    opacity: 0;
+    top: 0%;
+  }
+  8% {
+    opacity: 1;
+  }
+  30% {
+    top: 30%;
+  }
+  60% {
+    top: 60%;
+  }
+  92% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    top: 96%;
+  }
 }
 
 .caminho-etapa {
@@ -22,44 +64,41 @@
 
 .caminho-numero {
   position: absolute;
-  top: -8px;
-  right: -6px;
-  background: var(--accent);
-  color: var(--bg);
+  top: -10px;
+  right: -8px;
+  background: var(--surface);
+  color: var(--ink);
   font-family: var(--font-title);
-  font-weight: 700;
-  font-size: 0.7rem;
-  width: 1.3rem;
-  height: 1.3rem;
+  font-weight: 800;
+  font-size: 0.8rem;
+  width: 1.6rem;
+  height: 1.6rem;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid var(--well);
-  box-shadow: 0 0 10px var(--accent);
+  border: 2px solid var(--ink);
+  z-index: 1;
 }
 
 .caminho-icon {
-  width: 3rem;
-  height: 3rem;
-  padding: 10px;
+  width: 3.4rem;
+  height: 3.4rem;
   border-radius: 50%;
-  background: color-mix(in srgb, var(--accent) 14%, var(--surface));
-  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 22%, white);
+  border: 3px solid var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.7rem;
   flex-shrink: 0;
 }
 
-.caminho-icon svg {
-  width: 100%;
-  height: 100%;
-}
-
 .caminho-linha {
-  width: 3px;
+  width: 4px;
   flex: 1;
   min-height: 28px;
   background: var(--accent);
-  opacity: 0.35;
   border-radius: 2px;
   margin-top: 6px;
 }
@@ -67,6 +106,8 @@
 .caminho-texto {
   padding-top: 12px;
   color: var(--ink);
+  font-weight: 600;
+  font-size: 1.05rem;
   max-width: 50ch;
 }
 
@@ -93,7 +134,7 @@
 
   .caminho-linha {
     width: auto;
-    height: 3px;
+    height: 4px;
     flex: 1;
     min-height: 0;
     margin-top: 0;
@@ -103,5 +144,44 @@
   .caminho-texto {
     padding-top: 10px;
     padding-inline: 8px;
+  }
+
+  .onda-viajante {
+    left: 0;
+    top: 20px;
+    margin-left: -8px;
+  }
+
+  .caminho-ativo .onda-viajante {
+    animation-name: onda-caminhar-horizontal;
+  }
+
+  @keyframes onda-caminhar-horizontal {
+    0% {
+      opacity: 0;
+      left: 4%;
+    }
+    8% {
+      opacity: 1;
+    }
+    30% {
+      left: 29%;
+    }
+    60% {
+      left: 54%;
+    }
+    92% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      left: 79%;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .onda-viajante {
+    display: none;
   }
 }

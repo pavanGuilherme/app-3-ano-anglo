@@ -2,37 +2,89 @@
   margin-top: 56px;
   text-align: center;
   color: var(--ink-soft);
-  font-size: 0.9rem;
+  font-size: 1rem;
+  font-weight: 700;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
-  padding-top: 32px;
+  gap: 10px;
+  padding: 32px 16px 8px;
 }
 
 .footer-linha {
-  width: 120px;
-  height: 2px;
+  width: 160px;
+  height: 6px;
   margin-bottom: 8px;
-  background: linear-gradient(90deg, var(--coral), var(--gold), var(--teal), var(--violet));
+  background: linear-gradient(
+    90deg,
+    var(--vermelho),
+    var(--laranja),
+    var(--amarelo),
+    var(--verde),
+    var(--azul),
+    var(--roxo)
+  );
   border-radius: 999px;
-  opacity: 0.7;
+  border: 2px solid var(--ink);
 }
 
 .footer-titulo {
   font-family: var(--font-title);
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--ink);
+  margin: 0;
+}
+
+.footer-selo {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.footer-alunos {
+  margin-top: 6px;
+  padding: 16px 24px;
+  border: 3px dashed var(--roxo);
+  border-radius: 18px;
+  background: var(--well);
+}
+
+.footer-alunos-rotulo {
+  margin: 0 0 4px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-soft);
+}
+
+.footer-alunos-nomes {
+  margin: 0;
+  font-family: var(--font-title);
+  font-size: 1.15rem;
   color: var(--ink);
 }
 
 .footer-link {
-  margin-top: 10px;
-  color: var(--teal);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  margin-top: 12px;
+  padding: 10px 22px;
+  border: 3px solid var(--azul);
+  border-radius: 999px;
+  color: var(--ink);
+  background: color-mix(in srgb, var(--azul) 14%, white);
   text-decoration: none;
   font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-weight: 800;
+  font-size: 0.95rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
 }
 
 .footer-link:hover {
-  text-decoration: underline;
+  background: color-mix(in srgb, var(--azul) 28%, white);
+  transform: translateY(-2px);
 }

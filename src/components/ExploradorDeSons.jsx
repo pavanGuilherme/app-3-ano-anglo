@@ -51,10 +51,14 @@ export default function ExploradorDeSons() {
   }
 
   return (
-    <Section id="tipos-de-sons" title="Tipos de Sons" icon="onda" accent="coral">
-      <p className="section-text">
-        Escolha as opções abaixo e veja como a onda sonora muda! Toque nos botões para explorar.
-      </p>
+    <Section
+      id="tipos-de-sons"
+      title="Tipos de Sons"
+      icon="onda"
+      accent="azul"
+      dica="Aperte os botões e escute como a onda do som muda!"
+    >
+      <p className="section-text">Escolha as opções e veja a onda mudar!</p>
 
       <div className="explorador">
         {gruposTiposDeSons.map((grupo) => (

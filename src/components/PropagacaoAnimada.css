@@ -1,0 +1,144 @@
+.onda-circular-caixa {
+  margin-top: 22px;
+  padding: 16px;
+  background: var(--well);
+  border: 3px solid var(--accent);
+  border-radius: 20px;
+}
+
+.onda-circular {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.onda-fonte {
+  fill: var(--accent);
+}
+
+.onda-anel {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 3;
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+}
+
+.onda-circular-caixa.ativa .onda-anel {
+  animation: onda-circular-expandir 2.6s ease-out infinite;
+}
+
+.onda-circular-caixa.ativa .onda-anel-2 {
+  animation-delay: 0.85s;
+}
+
+.onda-circular-caixa.ativa .onda-anel-3 {
+  animation-delay: 1.7s;
+}
+
+@keyframes onda-circular-expandir {
+  0% {
+    opacity: 0.9;
+    transform: scale(0.3);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(4.2);
+  }
+}
+
+.onda-circular-legenda {
+  margin: 10px 0 0;
+  text-align: center;
+  font-weight: 700;
+  color: var(--ink);
+  font-size: 0.95rem;
+}
+
+.particulas-comparacao {
+  margin-top: 22px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 16px;
+}
+
+.meio-particulas-titulo {
+  font-family: var(--font-title);
+  font-weight: 700;
+  text-align: center;
+  margin: 0 0 8px;
+  color: var(--ink);
+}
+
+.meio-particulas-caixa {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  background: var(--surface);
+  border: 3px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.particula {
+  position: absolute;
+  width: 12%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.meio-particulas-caixa.ativa .particula-ar {
+  animation: particula-flutuar-gas 1.8s ease-in-out infinite;
+}
+
+.meio-particulas-caixa.ativa .particula-agua {
+  animation: particula-flutuar-liquido 2.4s ease-in-out infinite;
+}
+
+.meio-particulas-caixa.ativa .particula-solido {
+  animation: particula-vibrar-solido 0.5s ease-in-out infinite;
+}
+
+@keyframes particula-flutuar-gas {
+  0%,
+  100% {
+    transform: translate(-50%, -50%);
+  }
+  25% {
+    transform: translate(calc(-50% + 10px), calc(-50% - 8px));
+  }
+  50% {
+    transform: translate(calc(-50% - 8px), calc(-50% + 6px));
+  }
+  75% {
+    transform: translate(calc(-50% + 6px), calc(-50% + 10px));
+  }
+}
+
+@keyframes particula-flutuar-liquido {
+  0%,
+  100% {
+    transform: translate(-50%, -50%);
+  }
+  50% {
+    transform: translate(calc(-50% + 4px), calc(-50% + 4px));
+  }
+}
+
+@keyframes particula-vibrar-solido {
+  0%,
+  100% {
+    transform: translate(-50%, -50%);
+  }
+  50% {
+    transform: translate(calc(-50% + 1.2px), calc(-50% - 1.2px));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .onda-anel {
+    opacity: 0.5;
+    transform: scale(1.6);
+  }
+}

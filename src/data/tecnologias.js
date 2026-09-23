@@ -12,24 +12,24 @@ export const tecnologiasAuditivas = [
     id: "implantes-cocleares",
     icon: "implante",
     titulo: "Implantes cocleares",
-    texto: "Aparelhos especiais que ajudam pessoas com perda auditiva mais severa a perceber sons.",
+    texto: "Aparelhos especiais que ajudam quem tem perda auditiva a ouvir.",
   },
   {
     id: "fones-microfones",
     icon: "fone",
     titulo: "Fones e microfones",
-    texto: "Captam e transmitem sons para ouvirmos com mais clareza ou à distância.",
+    texto: "Captam e deixam os sons mais claros, de perto ou de longe.",
   },
   {
     id: "amplificacao",
     icon: "amplificador",
     titulo: "Sistemas de amplificação",
-    texto: "Deixam o som mais forte em lugares como teatros e escolas.",
+    texto: "Deixam o som mais forte em teatros e escolas.",
   },
   {
     id: "legendas",
     icon: "legenda",
     titulo: "Legendas e recursos de acessibilidade",
-    texto: "Mostram em texto o que está sendo dito, ajudando quem tem dificuldade para ouvir.",
+    texto: "Mostram em texto o que está sendo falado.",
   },
 ]

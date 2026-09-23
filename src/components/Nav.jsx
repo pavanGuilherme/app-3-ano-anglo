@@ -2,15 +2,15 @@ import { useEffect, useRef, useState } from "react"
 import "./Nav.css"
 
 const LINKS = [
-  { href: "#inicio", label: "Início" },
-  { href: "#como-nasce", label: "Como Nasce" },
-  { href: "#propagacao", label: "Propagação" },
-  { href: "#caminho-do-som", label: "Audição" },
-  { href: "#cuidados", label: "Cuidados" },
-  { href: "#tipos-de-sons", label: "Explorador" },
-  { href: "#instrumentos", label: "Instrumentos" },
-  { href: "#tecnologias", label: "Tecnologia" },
-  { href: "#instrumentos-caseiros", label: "Faça o Seu" },
+  { href: "#inicio", label: "Início", cor: "roxo" },
+  { href: "#como-nasce", label: "Como Nasce", cor: "vermelho" },
+  { href: "#propagacao", label: "Propagação", cor: "laranja" },
+  { href: "#caminho-do-som", label: "Audição", cor: "amarelo" },
+  { href: "#cuidados", label: "Cuidados", cor: "verde" },
+  { href: "#tipos-de-sons", label: "Explorador", cor: "azul" },
+  { href: "#instrumentos", label: "Instrumentos", cor: "roxo" },
+  { href: "#tecnologias", label: "Tecnologia", cor: "vermelho" },
+  { href: "#instrumentos-caseiros", label: "Faça o Seu", cor: "laranja" },
 ]
 
 export default function Nav() {
@@ -86,6 +86,7 @@ export default function Nav() {
               <a
                 href={link.href}
                 className={`nav-link${activeId === link.href.slice(1) ? " ativo" : ""}`}
+                style={{ "--nav-color": `var(--${link.cor})` }}
               >
                 {link.label}
               </a>
@@ -114,6 +115,7 @@ export default function Nav() {
               <a
                 href={link.href}
                 className={`nav-mobile-link${activeId === link.href.slice(1) ? " ativo" : ""}`}
+                style={{ "--nav-color": `var(--${link.cor})` }}
                 onClick={() => setMenuAberto(false)}
               >
                 {link.label}
