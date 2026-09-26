@@ -72,17 +72,14 @@
 
 .nav-links {
   display: none;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
   gap: 8px;
-  overflow-x: auto;
-  scrollbar-width: none;
+  overflow: visible;
   flex: 1;
   min-width: 0;
-  padding: 4px 2px;
-}
-
-.nav-links::-webkit-scrollbar {
-  display: none;
+  padding: 4px 3px 5px 0;
 }
 
 .nav-link {
